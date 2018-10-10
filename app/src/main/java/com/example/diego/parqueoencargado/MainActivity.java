@@ -15,14 +15,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText Contrasena, Codigo;
-    private DatabaseReference databaseReference;
-    private ProgressDialog progressDialog;
+
+    private EditText et1,et2;
+
+
+    //firebase auth object
+
     private FirebaseAuth firebaseAuth;
 
+    //progress dialog
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +42,21 @@ public class MainActivity extends AppCompatActivity {
             //opening profile activity
             startActivity(new Intent(getApplicationContext(), Sesion.class));
         }
+        //getting firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
-        Codigo = (EditText) findViewById(R.id.codigo);
-        Contrasena = (EditText) findViewById(R.id.contrasena);
+
+
+
+        et1 = (EditText) findViewById(R.id.codigo);
+        et2 = (EditText) findViewById(R.id.contrasena);
+
         progressDialog = new ProgressDialog(this);
     }
+
     public void ingresar(View view) {
         Log.e("Hello", "Eres");
-        String email = Codigo.getText().toString().trim();
-        String password = Contrasena.getText().toString().trim();
+        String email = et1.getText().toString().trim();
+        String password = et2.getText().toString().trim();
 
 
         if (TextUtils.isEmpty(email)) {
@@ -85,4 +95,5 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
 }
