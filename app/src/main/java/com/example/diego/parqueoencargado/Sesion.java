@@ -50,8 +50,7 @@ public class Sesion extends AppCompatActivity {
                 //Verificamos que el usuario sea encargado
                if(usuario.getTipo().equals("UsuarioEncargado")){
 
-
-
+                finish();
                    startActivity(new Intent(getApplicationContext(), Bienvenido.class));
 
 

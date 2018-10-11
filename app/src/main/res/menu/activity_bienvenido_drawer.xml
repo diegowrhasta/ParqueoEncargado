@@ -9,14 +9,12 @@
             android:id="@+id/nav_inicio"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Inicio" />
-        <item
-            android:id="@+id/nav_mis_autos"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Mis Autos" />
+
         <item
             android:id="@+id/nav_buscar_parqueo"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Buscar Parqueo" />
+            android:title="Calle"
+            />
         <item
             android:id="@+id/nav_salir"
             android:icon="@drawable/ic_menu_slideshow"
