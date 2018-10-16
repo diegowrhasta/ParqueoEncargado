@@ -1,11 +1,13 @@
 package com.example.diego.parqueoencargado;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -51,6 +53,18 @@ public class Calle extends Fragment {
             }
         };
         listaReporte.setAdapter(adapter); /*Una vez todos los valores se obtienen se lo aplican al listview que tenemos en la actividad */
+
+
+        listaReporte.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(getContext(),CambiarEstado.class);
+                intent.putExtra("posicion",i);
+                startActivity(intent);
+
+            }
+        });
         return view; }
 
 

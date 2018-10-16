@@ -20,7 +20,8 @@
         <activity
             android:name=".Bienvenido"
             android:label="@string/title_activity_bienvenido"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".CambiarEstado"></activity>
     </application>
 
 </manifest>
