@@ -4,23 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CambiarEstado">
+    tools:context=".CambiarEstado"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/tv1"
         android:layout_width="303dp"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="INGRESE LA PLACA DEL VEHICULO"
-        android:textSize="18sp"
+        android:textColor="@color/grey"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        />
 
     <EditText
         android:id="@+id/et1"
@@ -28,12 +32,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Placa"
+        android:gravity="center"
+        android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +56,7 @@
         android:layout_marginRight="8dp"
         android:onClick="cambiar"
         android:text="Cambiar estado"
+        android:background="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"

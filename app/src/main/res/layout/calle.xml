@@ -6,14 +6,15 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="20dp"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/espacio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="123"
-
+        android:textColor="@color/grey"
         android:textAllCaps="true"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -23,12 +24,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/grey"/>
 
     <TextView
         android:id="@+id/placa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/grey"/>
 
 </LinearLayout>

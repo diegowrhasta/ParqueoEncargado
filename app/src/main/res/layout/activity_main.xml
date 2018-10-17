@@ -10,20 +10,22 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_height="558dp"
+        android:background="@color/colorPrimary"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="225dp"
-            app:srcCompat="@mipmap/lapaz" />
+            app:srcCompat="@mipmap/alcaldia" />
 
         <EditText
             android:id="@+id/codigo"
@@ -33,6 +35,8 @@
             android:ems="10"
             android:hint="Mail"
             android:inputType="textPersonName"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
             tools:layout_editor_absoluteX="81dp"
             tools:layout_editor_absoluteY="232dp" />
 
@@ -44,8 +48,12 @@
             android:ems="10"
             android:hint="Contraseña"
             android:inputType="textPassword"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
             tools:layout_editor_absoluteX="81dp"
-            tools:layout_editor_absoluteY="232dp" />
+            tools:layout_editor_absoluteY="232dp"
+
+            />
 
         <Button
             android:id="@+id/ingresar"
