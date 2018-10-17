@@ -46,7 +46,7 @@ public class Calle extends Fragment {
                 TextView placa = v.findViewById(R.id.placa);
 
                 Parqueo enc = (Parqueo) model; //El modelo es el cual se obtiene desde Firebase; del objeto: Con sus atributos, acá es donde entra la parte de case sensitive, si los nombres
-                // de la clase local y los nombres en firebase difieren surgirá un error.
+                 //de la clase local y los nombres en firebase difieren surgirá un error.
                 espacio.setText("Lugar: "+enc.getEspacio().toString()); /*Todos los valores los estamos manejando como Strings para facilitar el uso */
                 estado.setText("Estado: "+enc.getEstado().toString()+"    Calle 2");
                 placa.setText("Placa: "+enc.getPlaca().toString());
