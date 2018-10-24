@@ -78,14 +78,6 @@ public class CambiarEstado extends AppCompatActivity {
 
     }
     public void cambiar(View view){
-
-
-
-
-
-
-
-
         Query query = FirebaseDatabase.getInstance().getReference().child("Cliente").child("Parqueo").child("Calle_2").child("Sector_A").child(par); //Se hace un pequeño Query a la base de datos para poner un puntero en el objeto de encargados
         query.addValueEventListener(new ValueEventListener() {
             String aux="";
@@ -139,10 +131,8 @@ public class CambiarEstado extends AppCompatActivity {
                         aux = "as";
                         finish();
                     }
-
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -156,12 +146,9 @@ public class CambiarEstado extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Parqueo value = dataSnapshot.getValue(Parqueo.class);
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
