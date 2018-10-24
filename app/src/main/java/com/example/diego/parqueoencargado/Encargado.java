@@ -9,6 +9,19 @@ public class Encargado { //Todos estos atributos son los registrados en Firebase
     public String sector;
     public String telefono;
 
+    @Override
+    public String toString() {
+        return "Encargado{" +
+                "calle_activa='" + calle_activa + '\'' +
+                ", correo='" + correo + '\'' +
+                ", fecha_nac='" + fecha_nac + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", password='" + password + '\'' +
+                ", sector='" + sector + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
+
     public Encargado(String calle_activa, String correo, String fecha_nac, String nombre, String password, String sector, String telefono) {
         this.calle_activa = calle_activa;
         this.correo = correo;

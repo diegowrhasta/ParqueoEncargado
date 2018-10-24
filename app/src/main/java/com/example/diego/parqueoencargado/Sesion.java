@@ -36,11 +36,13 @@ public class Sesion extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot artistSnapshot: dataSnapshot.getChildren()){
                     Encargado usuario= artistSnapshot.getValue(Encargado.class);
+                    Log.e("Objeto",""+usuario.toString());
                     if(usuario.getCorreo().equals(VariablesGlobales.correo) && usuario.getPassword().equals(VariablesGlobales.password))
                     {
                         VariablesGlobales.NombreEncargado=usuario.getNombre();
                         finish();
                         startActivity(new Intent(getApplicationContext(),Bienvenido.class));
+                        break;
                     }
                     else{
                         finish();

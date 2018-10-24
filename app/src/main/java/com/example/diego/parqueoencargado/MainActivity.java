@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
             VariablesGlobales.correo = email;
             VariablesGlobales.password = password;
         }
+        Log.e("Correo Ingresado",""+VariablesGlobales.correo);
+        Log.e("Password Ingresado",""+VariablesGlobales.password);
         et1.setText("");
         et2.setText("");
         finish();
