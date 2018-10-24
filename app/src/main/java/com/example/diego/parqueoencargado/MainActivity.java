@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
     //progress dialog
-    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         et1 = (EditText) findViewById(R.id.codigo);
         et2 = (EditText) findViewById(R.id.contrasena);
 
-        progressDialog = new ProgressDialog(this);
     }
 
     public void ingresar(View view) {
@@ -74,9 +72,9 @@ public class MainActivity extends AppCompatActivity {
             VariablesGlobales.correo = email;
             VariablesGlobales.password = password;
         }
-
-        progressDialog.setMessage("Ingresando...");
-        progressDialog.show();
+        et1.setText("");
+        et2.setText("");
+        finish();
         startActivity(new Intent(getApplicationContext(), Sesion.class));
 
     }

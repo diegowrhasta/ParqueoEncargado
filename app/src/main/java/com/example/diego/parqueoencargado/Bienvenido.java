@@ -26,7 +26,6 @@ public class Bienvenido extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private FirebaseAuth firebaseAuth;
     FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +57,9 @@ public class Bienvenido extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            moveTaskToBack(true);
         }
+
     }
 
 
@@ -73,12 +73,15 @@ public class Bienvenido extends AppCompatActivity
         FragmentManager fragmentManager=getSupportFragmentManager();
 
         if (id == R.id.nav_inicio) {
-
+            finish();
+            startActivity(new Intent(this, Bienvenido.class));
         }  else if (id == R.id.nav_buscar_parqueo) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new Calle()).commit();
         } else if (id == R.id.nav_salir) {
 
-            firebaseAuth.signOut();
+            VariablesGlobales.correo="";
+            VariablesGlobales.password="";
+            VariablesGlobales.NombreEncargado="";
             startActivity(new Intent(this, MainActivity.class));
         }
 
@@ -86,4 +89,5 @@ public class Bienvenido extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
