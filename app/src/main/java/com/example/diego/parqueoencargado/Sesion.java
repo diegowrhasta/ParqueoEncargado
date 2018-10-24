@@ -21,6 +21,7 @@ public class Sesion extends AppCompatActivity {
     private TextView tipo;
     public String correo;
     public String pass;
+    boolean encontrado=false;
     private DatabaseReference myRef;
 
     @Override
@@ -40,24 +41,25 @@ public class Sesion extends AppCompatActivity {
                     if(usuario.getCorreo().equals(VariablesGlobales.correo) && usuario.getPassword().equals(VariablesGlobales.password))
                     {
                         VariablesGlobales.NombreEncargado=usuario.getNombre();
-                        finish();
-                        startActivity(new Intent(getApplicationContext(),Bienvenido.class));
+                        encontrado=true;
                         break;
                     }
-                    else{
-                        finish();
-                        //starting MainActivity
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        Toast.makeText(Sesion.this, "Datos Incorrectos", Toast.LENGTH_SHORT).show();
-                    }
                 }
-
+                if(encontrado){
+                    finish();
+                    startActivity(new Intent(getApplicationContext(),Bienvenido.class));
+                }
+                else{
+                    finish();
+                    //starting MainActivity
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    Toast.makeText(Sesion.this, "Datos Incorrectos", Toast.LENGTH_SHORT).show();
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
-
     }
 }
