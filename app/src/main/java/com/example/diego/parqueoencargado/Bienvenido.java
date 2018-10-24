@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.errorprone.annotations.Var;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -47,21 +48,8 @@ public class Bienvenido extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         final TextView navUsername = (TextView) headerView.findViewById(R.id.tv1);
 
-        Query query = FirebaseDatabase.getInstance().getReference().child("Cliente").child(currentFirebaseUser.getUid()).child("Usuario"); //Se hace un pequeño Query a la base de datos para poner un puntero en el objeto de encargados
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                UserInformation value = dataSnapshot.getValue(UserInformation.class);
 
-                navUsername.setText(value.getnombre());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-
-            }
-        });
+                navUsername.setText(VariablesGlobales.NombreEncargado);
     }
 
     @Override
